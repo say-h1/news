@@ -1,0 +1,31 @@
+apiVersion: 1
+kind: Deployment
+metadata: 
+  name: aws9-deploy-news
+  namespace: aws9C
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      color: blue    # (1)Pod 작성시 이 부분(label -> app: web)이 포함되어야 함
+  template:   # 여기에서 부터 Pod 작성
+    metadata:
+      labels:
+        color: blue  # 반드시 (1) 과 동일해야 함
+    spec:
+      containers:
+        - name: aws9ctn-blue
+          image: hub.aws9.pri/aws9/yello
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aws9-svc-news
+spec:
+  ports:
+  - name: aws9-port-news
+    port: 8080       # cluster-ip 의 포트 번호(type 없으면 기본은 cluster-ip )
+    protocol: TCP
+    targetPort: 80    # 컨테이너의 포트 
+  selector:
+    color: blue    # Pod 의 label 을 지정해 주어야 한다!!! 
