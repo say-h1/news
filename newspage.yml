@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: aws9-deploy-news
-  namespace: aws9C
+  namespace: aws9c
 spec:
   replicas: 1
   selector:
