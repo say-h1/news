@@ -12,18 +12,12 @@ spec:
     metadata:
       labels:
         color: blue  # 반드시 (1) 과 동일해야 함
-#    spec:
-#      containers:
-#        - name: aws9ctn-blue
-#          image: hub.aws9.pri/aws9/news:news
-spec:
-  template:
     spec:
-      containers:
-      - name: aws9ctn-news
-        image: hub.aws9.pri/aws9/news:news
       imagePullSecrets:
       - name: regcred
+      containers:
+        - name: aws9ctn-blue
+          image: hub.aws9.pri/aws9/news:news
 ---
 apiVersion: v1
 kind: Service
