@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: aws9ctn-blue
-          image: hub.aws9.pri/aws9/yello
+          image: hub.aws9.pri/aws9/news:news
 ---
 apiVersion: v1
 kind: Service
