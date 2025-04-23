@@ -4,7 +4,7 @@ metadata:
   name: aws9-deploy-news
   namespace: aws9c
 spec:
-  replicas: 1
+  #replicas: 1
   selector:
     matchLabels:
       color: blue    # (1)Pod 작성시 이 부분(label -> app: web)이 포함되어야 함
