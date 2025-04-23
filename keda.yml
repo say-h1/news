@@ -5,7 +5,7 @@ metadata:
   namespace: aws9c  # 배포 대상 네임스페이스
 spec:
   scaleTargetRef:
-    name: aws9-deploy-blog  # 대상이 되는 Deployment 이름
+    name: aws9-deploy-news  # 대상이 되는 Deployment 이름
   minReplicaCount: 1         # 기본 최소 Pod 개수 (오전 9시 이전, 오후 6시 이후엔 1개 유지)
   maxReplicaCount: 10        # 최대 Pod 수는 CPU 조건에 따라 확장 가능
   pollingInterval: 30        # (선택) 트리거 체크 주기 (초), 기본값은 30초
