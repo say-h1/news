@@ -1,7 +1,7 @@
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
-  name: blog-scaledobject
+  name: news-scaledobject
   namespace: aws9c  # 배포 대상 네임스페이스
 spec:
   scaleTargetRef:
