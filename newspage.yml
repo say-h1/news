@@ -18,6 +18,22 @@ spec:
       containers:
         - name: aws9ctn-blue
           image: hub.aws9.pri/aws9/news:news
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+          volumeMounts:
+            - name: myvol2
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: myvol2
+          persistentVolumeClaim:
+            claimName: dev1-pvc
 ---
 apiVersion: v1
 kind: Service
